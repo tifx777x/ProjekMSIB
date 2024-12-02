@@ -1,0 +1,168 @@
+/* Reset beberapa gaya default browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-section form {
+    display: flex;
+}
+
+.search-section input[type="text"] {
+    padding: 12px;
+    width: 300px;
+    font-size: 1.1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-section button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.search-section button:hover {
+    background-color: #0056b3; /* Memberikan efek hover lebih jelas */
+}
+
+.search-section input[type="text"]:focus,
+.search-section button:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+/* Styling untuk movie-item */
+.movie-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding: 10px; /* Menambahkan padding pada movie-item */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    margin: 0 auto; /* Mengatur margin secara otomatis agar berada di tengah */
+}
+
+/* Styling untuk gambar cover film */
+.movie-cover {
+    width: 100%;
+    height: 200px; /* Atur tinggi gambar agar tidak terlalu tinggi */
+    object-fit: cover; /* Agar gambar tetap terpotong dengan rapi */
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px; /* Menambahkan jarak bawah pada gambar */
+}
+
+/* Styling untuk judul film dan genre */
+.movie-details h4 {
+    font-size: 1.2rem;
+    color: #0056b3;
+    margin: 10px 0; /* Menambahkan margin atas dan bawah untuk judul */
+}
+
+.movie-details p {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 5px 0; /* Memberikan sedikit jarak antar paragraf */
+}
+
+/* Layout Movie List menggunakan Grid */
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Menyesuaikan grid secara otomatis */
+    gap: 20px; /* Menambahkan jarak antar elemen */
+    margin-top: 20px;
+}
+
+.emotion-display {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.search-results {
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.movie-details h4 {
+    font-size: 1.2rem;
+    color: #0056b3;
+}
+
+/* Responsivitas untuk perangkat kecil */
+@media (max-width: 768px) {
+    .search-section input[type="text"] {
+        width: 80%;  /* Lebar input lebih responsif */
+    }
+
+    .search-section button {
+        width: 100%;
+    }
+
+    .movie-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Menyesuaikan grid di perangkat kecil */
+    }
+
+    .movie-item {
+        width: 100%; /* Membuat setiap item film lebih lebar pada layar kecil */
+        margin-bottom: 20px; /* Memberikan jarak antar film */
+    }
+}
+
+/* Loader untuk proses deteksi ekspresi */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

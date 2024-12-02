@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results - CineMood</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>CineMood</h1>
+  </header>
+
+  <!-- Pencarian Film -->
+  <section class="search-section">
+    <form action="/search" method="get">
+      <input type="text" name="searchTerm" placeholder="Search for a movie..." required>
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <!-- Hasil Pencarian -->
+  <section class="search-results" th:if="${searchResults != null and searchResults.size() > 0}">
+    <h3>Search Results:</h3>
+    <div class="movie-list">
+        <div th:each="movie : ${searchResults}">
+        <div class="movie-item">
+          <a th:href="@{/movie/{title}(title=${movie.title})}">
+            <div class="movie-details">
+              <h4 th:text="${movie.title}"></h4>
+              <p th:text="${movie.genres}"></p>
+
+
+              <img th:src="@{${movie.coverUrl}}" alt="Cover image for movie" class="movie-cover"/>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jika tidak ada hasil pencarian -->
+  <section th:if="${searchResults == null or searchResults.size() == 0}">
+    <p>No movies found for your search term.</p>
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - CineMood</title>
+    <link rel="stylesheet" href="/css/movieDetails.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>CineMood</h1>
+    </header>
+
+    <!-- Detail Film -->
+    <section class="movie-details">
+        <h2 class="movie-title" th:text="${movie.title}"></h2>
+        <img th:src="@{${movie.coverUrl}}" alt="Movie Poster" class="movie-cover" />
+
+        <div class="movie-info">
+            <p><strong>Genres:</strong> <span th:text="${movie.genres}"></span></p>
+            <p><strong>Description:</strong> <span th:text="${movie.overview}"></span></p>
+            <p><strong>Rating:</strong> <span th:text="${movie.vote_average}"></span></p>
+        </div>
+    </section>
+
+    <!-- Link Kembali ke Pencarian -->
+    <section class="back-link">
+        <a href="/" class="back-button">Back to Search</a>
+    </section>
+</div>
+</body>
+</html>
